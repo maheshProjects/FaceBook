@@ -42,5 +42,10 @@
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.3.4</version>
 		</dependency>
+		<dependency>
+			<groupId>com.book</groupId>
+			<artifactId>Book</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

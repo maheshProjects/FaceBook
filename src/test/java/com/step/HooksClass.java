@@ -3,47 +3,29 @@ package com.step;
 
 import java.io.IOException;
 
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-
 import com.base.BaseClass;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.BeforeStep;
+
+;
 
 public class HooksClass extends BaseClass {
 
-	@BeforeMethod
+	@BeforeStep
 	public void beforeScenario() {
 		System.out.println("----------------------------------------------------------------------------");
-	System.out.println(" Started");
+		System.out.println("----------------------------------------------------------------------------");
+		System.out.println("----------------------------------------------------------------------------");
+		System.out.println("----------------------------------------------------------------------------");
+
 	}
 
-	@AfterMethod
-	public void afterScenario(ITestResult result) throws IOException, InterruptedException {
+	@AfterStep
+	public void afterScenario() throws InterruptedException, IOException {
 
-		Thread.sleep(1500);
+		screenShot();
+		quiteWindow();
 
-		if (ITestResult.FAILURE == result.getStatus()) {
-
-			System.out.println("Test Failed: " + result.getName());
-			
-			screenShot();
-
-			quiteWindow();
-
-			System.out.println(" Scenario Complete");
-		} else {
-			
-			quiteWindow();
-
-			System.out.println(" Scenario Complete");
-		}
 	}
 }

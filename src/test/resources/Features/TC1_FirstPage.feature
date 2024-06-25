@@ -23,5 +23,5 @@ Feature: Facebok page automation
     Then User click the login button after enter  all the fields
 
     Examples: 
-      | fName      | passWord   |
-      | 9497367861 | 8078306863 |
+      | fName      | passWord |
+      | 9497367861 | abcdefgh |
