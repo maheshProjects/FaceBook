@@ -18,7 +18,7 @@ public class TC1_FirstPageStep extends BaseClass {
 	}
 
 	@When("User navigate to the URL")
-	public void user_navigate_to_the_url() {
+	public void user_navigate_to_the_url() throws InterruptedException {
 		loadUrl();
 
 	}

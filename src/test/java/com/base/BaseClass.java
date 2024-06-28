@@ -1,11 +1,9 @@
 package com.base;
 
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+import java.io.IOException;
 import java.nio.file.CopyOption;
 import java.util.Iterator;
 import java.util.Set;
@@ -44,21 +42,12 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 
-	public void loadUrl() {
+	public void loadUrl() throws InterruptedException {
+		
+		Thread.sleep(3000);
 
 		driver.get("https://www.facebook.com/");
 
-	}
-
-	public WebElement findElementById(String string) {
-		WebElement findElement = driver.findElement(By.id("string"));
-		return findElement;
-
-	}
-
-	public WebElement findElementByXpath(String webElement) {
-		WebElement findElement = driver.findElement(By.xpath("string"));
-		return findElement;
 	}
 
 	public void click(WebElement element) {
@@ -111,10 +100,12 @@ public class BaseClass {
 
 		File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
 
-		File s = new File("C:\\Users\\ABINESH\\OneDrive\\Desktop\\Mahesh P\\BookCart\\target\\Screenshot\\ screenshot"
-				+ S + ".png");
+		File s = new File(
+				"C:\\Users\\ABINESH\\OneDrive\\Desktop\\Mahesh P\\FacebookDemo\\target\\Screenshot\\screenshot" + S
+						+ ".png");
 
 		Files.copy(screenshotAs, s);
+
 		S = S + 1;
 
 	}

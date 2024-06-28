@@ -1,5 +1,6 @@
-Feature: Facebok page automation
 
+Feature: Facebok page automation
+@Run
   Scenario: First page automation
     Given User select to the chrome browser
     When User navigate to the URL
@@ -15,7 +16,6 @@ Feature: Facebok page automation
       | fName      | passWord   |
       | 9497367861 | 8078306861 |
 
-  @Run
   Scenario Outline: First page automation with inavlid credential
     Given User select to the chrome browser
     When User navigate to the URL

@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import com.base.BaseClass;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.BeforeStep;
 
@@ -15,9 +17,6 @@ public class HooksClass extends BaseClass {
 	@BeforeStep
 	public void beforeScenario() {
 		System.out.println("----------------------------------------------------------------------------");
-		System.out.println("----------------------------------------------------------------------------");
-		System.out.println("----------------------------------------------------------------------------");
-		System.out.println("----------------------------------------------------------------------------");
 
 	}
 
@@ -25,7 +24,16 @@ public class HooksClass extends BaseClass {
 	public void afterScenario() throws InterruptedException, IOException {
 
 		screenShot();
+
+		System.out.println("Screenshot compleated");
+
+	}
+
+	@After
+	public void quiteMethod() {
+
 		quiteWindow();
 
 	}
+
 }
